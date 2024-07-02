@@ -1,4 +1,8 @@
+using FitAppServer.Service;
 using FitAppServer.Utils;
+using Quartz;
+using Quartz.Spi;
+using static Quartz.Logging.OperationName;
 
 namespace FitAppServer
 {
@@ -18,6 +22,8 @@ namespace FitAppServer
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddSingleton<SchedulerService>();
 
             builder.Configuration.AddEnvironmentVariables().SetBasePath(builder.Environment.ContentRootPath);
 

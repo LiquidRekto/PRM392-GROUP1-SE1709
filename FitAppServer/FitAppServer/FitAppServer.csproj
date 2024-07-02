@@ -6,11 +6,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="DTOs\" />
-  </ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.25">
 			<PrivateAssets>all</PrivateAssets>
@@ -23,6 +18,8 @@
 		<PackageReference Include="Microsoft.AspNetCore.OData" Version="8.0.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 		<PackageReference Include="Google.Apis.FirebaseCloudMessaging.v1" Version="1.68.0.3431" />
+		<PackageReference Include="Quartz" Version="3.10.0" />
+		<PackageReference Include="Quartz.AspNetCore" Version="3.10.0" />
 	</ItemGroup>
 
   <ItemGroup>

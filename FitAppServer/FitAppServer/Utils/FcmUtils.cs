@@ -7,6 +7,7 @@ namespace FitAppServer.Utils
     {
         public static async Task PushNotificationAsync(string title, string body, string token)
         {
+            System.Diagnostics.Debug.WriteLine("BEGIN PUSHING NOTIFICATION!");
             var fcmService = FcmNotificationSender.GetFcmService();
 
             
@@ -28,12 +29,12 @@ namespace FitAppServer.Utils
 
             try
             {
-                var result = await fcmService.Projects.Messages.Send(msgRequest, null).ExecuteAsync();
-                Console.WriteLine($"Message sent successfully: {result.Name}");
+                var result = await fcmService.Projects.Messages.Send(msgRequest, "projects/fitapp-project").ExecuteAsync();
+                System.Diagnostics.Debug.WriteLine($"Message sent successfully: {result.Name}");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error sending message: {ex.Message}");
+                throw new Exception($"Error sending message: {ex.Message}");
             }
         }
     }
