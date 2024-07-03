@@ -30,6 +30,22 @@
             android:name=".activity.FCMTestActivity">
 
         </activity>
+        <activity
+            android:name=".activity.LaunchActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.HomeActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.UserLoginActivity">
+
+        </activity>
+        <activity
+            android:name=".activity.UserRegisterActivity">
+
+        </activity>
         <service android:name=".service.PushNotificationService"
             android:exported="false">
             <intent-filter>

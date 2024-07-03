@@ -7,16 +7,9 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity">
-
-    <TextView
+    <com.google.android.material.progressindicator.CircularProgressIndicator
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to fit app!" />
-    <Button
-        android:id="@+id/fcm_layout_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="FCM Test"
-        />
+        android:indeterminate="true" />
 
 </LinearLayout>
