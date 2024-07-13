@@ -11,6 +11,6 @@ namespace FitAppServer.Models
         public int StepIndex { get; set; }
         public string? MediaUrl { get; set; }
         public string? StepDescription { get; set; }
-        public Exercise? Exercise { get; set; }
+        public virtual Exercise? Exercise { get; set; }
     }
 }

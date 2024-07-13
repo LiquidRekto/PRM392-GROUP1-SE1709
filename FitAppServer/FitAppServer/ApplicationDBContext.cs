@@ -11,8 +11,8 @@ namespace FitAppServer
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             IConfigurationRoot configuration = builder.Build();
-            //optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbCnn"));
-            optionsBuilder.UseMySQL(configuration.GetConnectionString("DbCnn"));
+            optionsBuilder.UseSqlServer(configuration.GetConnectionString("DbCnn"));
+            //optionsBuilder.UseMySQL(configuration.GetConnectionString("DbCnn"));
         }
 
         public virtual DbSet<Assign> Assigns { get; set; }
@@ -34,6 +34,30 @@ namespace FitAppServer
                 j => j.HasOne(mfs => mfs.Schedule).WithMany(),
                 j => j.HasOne(mfs => mfs.Exercise).WithMany()
             );
+
+            modelBuilder.Entity<Assign>()
+            .HasOne(a => a.Trainee)
+            .WithOne(u => u.TraineeAssignment)
+            .HasForeignKey<Assign>(a => a.TraineeId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Assign>()
+                .HasOne(a => a.Trainer)
+                .WithMany(u => u.TrainerAssignments)
+                .HasForeignKey(a => a.TrainerId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Schedule>()
+            .HasOne(a => a.Trainee)
+            .WithMany(u => u.TraineeSchedules)
+            .HasForeignKey(a => a.TraineeId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Schedule>()
+                .HasOne(a => a.Trainer)
+                .WithMany(u => u.TrainerSchedules)
+                .HasForeignKey(a => a.TrainerId)
+                .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<Assign>().HasKey(t => new { t.TrainerId, t.TraineeId });
 

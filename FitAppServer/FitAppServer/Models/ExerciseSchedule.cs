@@ -4,7 +4,7 @@
     {
         public int ExerciseId { get; set; }
         public int ScheduleId { get; set; }
-        public Exercise? Exercise { get; set; }
-        public Schedule? Schedule { get; set; }
+        public virtual Exercise? Exercise { get; set; }
+        public virtual Schedule? Schedule { get; set; }
     }
 }

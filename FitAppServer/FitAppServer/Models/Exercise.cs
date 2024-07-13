@@ -10,6 +10,6 @@ namespace FitAppServer.Models
         public string? ExerciseName { get; set; }
         public string? ExerciseDescription { get; set; }
         public string? Thumbnail {  get; set; }
-        public ICollection<Schedule> Schedules { get; set; }
+        public virtual ICollection<Schedule> Schedules { get; set; }
     }
 }

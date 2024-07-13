@@ -1,4 +1,5 @@
-﻿using FitAppServer.DTOs;
+﻿using AutoMapper;
+using FitAppServer.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +9,22 @@ namespace FitAppServer.Controllers
     [ApiController]
     public class ScheduleController : ControllerBase
     {
+        private IConfiguration _config;
+        private IMapper _mapper;
+        private ApplicationDBContext _context;
+
+        public ScheduleController(IConfiguration config, IMapper mapper, ApplicationDBContext context)
+        {
+            _config = config;
+            _mapper = mapper;
+            _context = context;
+        }
+
         [HttpGet]
         [Route("all")]
         public async Task<IActionResult> GetAllSchedule()
         {
-            return Ok(null);
+            return Ok(_context.Schedules.ToList());
         }
 
         [HttpGet]

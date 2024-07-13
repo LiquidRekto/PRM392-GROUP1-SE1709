@@ -13,6 +13,6 @@ namespace FitAppServer.Models
         public DateTime EndTime { get; set; }
         public User Trainee {  get; set; }
         public User Trainer { get; set; }
-        public ICollection<Exercise> Exercises { get; set; }
+        public virtual ICollection<Exercise>? Exercises { get; set; }
     }
 }
