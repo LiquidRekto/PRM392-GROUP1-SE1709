@@ -1,4 +1,4 @@
-package com.example.fitapp;
+package com.example.fitapp.listitem;
 
 public class RecyclerData {
  

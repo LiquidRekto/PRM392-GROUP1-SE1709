@@ -8,21 +8,25 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitapp.R;
-import com.example.fitapp.RecyclerData;
-import com.example.fitapp.RecyclerViewAdapter;
+import com.example.fitapp.listitem.RecyclerData;
+import com.example.fitapp.listitem.RecyclerScheduleData;
+import com.example.fitapp.viewholder.RecyclerScheduleViewAdapter;
+import com.example.fitapp.viewholder.RecyclerViewAdapter;
+import com.example.fitapp.model.Schedule;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class TraineeScheduleFragment extends Fragment {
 
+    private List<Schedule> scheduleList;
     private RecyclerView recyclerView;
-    private ArrayList<RecyclerData> recyclerDataArrayList;
+    private ArrayList<RecyclerScheduleData> recyclerDataArrayList;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,14 +51,11 @@ public class TraineeScheduleFragment extends Fragment {
         recyclerDataArrayList=new ArrayList<>();
 
         // added data to array list
-        recyclerDataArrayList.add(new RecyclerData("DSA",R.drawable.ic_baseline_access_time_24));
-        recyclerDataArrayList.add(new RecyclerData("JAVA",R.drawable.ic_baseline_access_time_24));
-        recyclerDataArrayList.add(new RecyclerData("C++",R.drawable.ic_baseline_access_time_24));
-        recyclerDataArrayList.add(new RecyclerData("Python",R.drawable.ic_baseline_access_time_24));
-        recyclerDataArrayList.add(new RecyclerData("Node Js",R.drawable.ic_baseline_access_time_24));
-
+        recyclerDataArrayList.add(new RecyclerScheduleData(1, "10:00 - 12:00", "Nguyen Van A"));
+        recyclerDataArrayList.add(new RecyclerScheduleData(2, "10:50 - 12:00", "Nguyen Van B"));
+        recyclerDataArrayList.add(new RecyclerScheduleData(3, "10:00 - 12:50", "Nguyen Van C"));
         // added data from arraylist to adapter class.
-        RecyclerViewAdapter adapter=new RecyclerViewAdapter(recyclerDataArrayList,view.getContext());
+        RecyclerScheduleViewAdapter adapter=new RecyclerScheduleViewAdapter(recyclerDataArrayList,view.getContext());
 
         // setting grid layout manager to implement grid view.
         // in this method '2' represents number of columns to be displayed in grid view.

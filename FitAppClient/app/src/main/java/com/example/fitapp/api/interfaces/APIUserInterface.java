@@ -1,2 +1,4 @@
-package com.example.fitapp.api.interfaces;public interface APIUserInterface {
+package com.example.fitapp.api.interfaces;
+
+public interface APIUserInterface {
 }
