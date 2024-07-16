@@ -17,8 +17,8 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitapp.R;
-import com.example.fitapp.RecyclerData;
-import com.example.fitapp.RecyclerViewAdapter;
+import com.example.fitapp.listitem.RecyclerData;
+import com.example.fitapp.viewholder.RecyclerViewAdapter;
 import com.example.fitapp.activity.LaunchActivity;
 import com.example.fitapp.util.SharedPrefUtils;
 
