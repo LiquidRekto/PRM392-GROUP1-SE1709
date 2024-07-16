@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:textSize="24dp"
         android:textStyle="bold"
-        android:text="Register FitApp account"
+        android:text="Add new schedule"
         android:gravity="center"/>
     <EditText
         android:id="@+id/txt_rg_username"

@@ -19,7 +19,7 @@ public class SettingsFragment extends Fragment {
         super.onCreateView(inflater, container, savedInstanceState);
         TextView title = (TextView) getActivity().findViewById(R.id.app_bar_title);
         title.setText("Settings");
-        View view = inflater.inflate(R.layout.settings_layout, container, false);
+        View view = inflater.inflate(R.layout.trainee_schedule, container, false);
         init();
         return view;
 
