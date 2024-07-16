@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.auth0.android.jwt.Claim;
 import com.auth0.android.jwt.JWT;
+import com.example.fitapp.activity.BaseActivity;
 import com.example.fitapp.activity.FCMTestActivity;
 import com.example.fitapp.activity.HomeActivity;
 import com.example.fitapp.activity.LaunchActivity;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToHome() {
-        Intent myIntent = new Intent(this, HomeActivity.class);
+        Intent myIntent = new Intent(this, BaseActivity.class);
         startActivity(myIntent);
     }
     private void goToFCMTest() {

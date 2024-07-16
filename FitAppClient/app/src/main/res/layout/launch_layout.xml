@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +16,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="16dp"
+        android:paddingVertical="16dp"
         android:text="It seems like you are not logged in. Please proceed to login or create your own new account!" />
     <Button
         android:id="@+id/btn_login_screen"
@@ -22,6 +24,7 @@
         android:layout_height="wrap_content"
         android:textSize="16dp"
         android:text="Login"
+        android:backgroundTint="@color/primary"
         />
     <Button
         android:id="@+id/btn_register_screen"
@@ -29,6 +32,7 @@
         android:layout_height="wrap_content"
         android:textSize="16dp"
         android:text="Register"
+        android:backgroundTint="@color/primary"
         />
 
 </LinearLayout>

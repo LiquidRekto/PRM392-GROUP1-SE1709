@@ -85,7 +85,7 @@ public class UserLoginActivity extends AppCompatActivity {
     }
 
     private void moveToHome() {
-        Intent homeIntent = new Intent(this, HomeActivity.class);
+        Intent homeIntent = new Intent(this, BaseActivity.class);
         startActivity(homeIntent);
     }
 

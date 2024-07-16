@@ -7,6 +7,11 @@ android {
     namespace 'com.example.fitapp'
     compileSdk 34
 
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+
     defaultConfig {
         applicationId "com.example.fitapp"
         minSdk 29
@@ -30,7 +35,6 @@ android {
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -43,4 +47,5 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.11.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.11.0'
     implementation 'com.auth0.android:jwtdecode:2.0.2'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
