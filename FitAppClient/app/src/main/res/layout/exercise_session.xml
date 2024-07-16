@@ -10,23 +10,24 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_close"
+            android:backgroundTint="@android:color/transparent"
+            />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            />
         <TextView
-            android:id="@+id/lbl_exercise_name"
+            android:id="@+id/lbl_exercise_step"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EXERCISE_NAME"
+            android:text="STEP_N"
             android:textSize="32dp"
             android:textStyle="bold"
 
-            />
-        <TextView
-            android:id="@+id/lbl_exercise_time"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="EXERCISE_TIME"
-            android:textSize="18dp"
-            android:textColor="#aaaaaa"
-            android:drawableLeft="@drawable/ic_baseline_access_time_24"
             />
         <Space
             android:layout_width="match_parent"
@@ -49,12 +50,30 @@
             />
 
     </LinearLayout>
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_gravity="center|bottom"
-        android:backgroundTint="@color/primary"
-        android:textSize="18dp"
-        android:text="START"
-        />
+        >
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/secondary"
+            android:textSize="18dp"
+            android:text="NEXT"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:paddingHorizontal="10dp"
+            android:backgroundTint="@color/primary"
+            android:textSize="18dp"
+            android:text="RESET"
+            />
+    </LinearLayout>
+
 </FrameLayout>

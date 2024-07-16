@@ -13,7 +13,15 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gv_schedule_trainee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        />
+
     <ScrollView
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
