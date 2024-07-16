@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ public class RecyclerScheduleViewAdapter extends RecyclerView.Adapter<RecyclerSc
 
     private ArrayList<RecyclerScheduleData> scheduleDataArrayList;
     private Context mcontext;
+    private OnClickListener onClickListener;
 
     public RecyclerScheduleViewAdapter(ArrayList<RecyclerScheduleData> recyclerDataArrayList, Context mcontext) {
         this.scheduleDataArrayList = recyclerDataArrayList;
@@ -39,12 +41,23 @@ public class RecyclerScheduleViewAdapter extends RecyclerView.Adapter<RecyclerSc
         RecyclerScheduleData recyclerData = scheduleDataArrayList.get(position);
         holder.timeRangeTV.setText(recyclerData.getTimeRange());
         holder.trainerTV.setText("Trainer: "+ recyclerData.getTrainer());
+
+
     }
  
     @Override
     public int getItemCount() {
         // this method returns the size of recyclerview
         return scheduleDataArrayList.size();
+    }
+
+    public interface OnClickListener {
+        void onClick(int position);
+    }
+
+    // Setter for the click listener
+    public void setOnClickListener(OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
     }
  
     // View Holder Class to handle Recycler View.
@@ -57,6 +70,19 @@ public class RecyclerScheduleViewAdapter extends RecyclerView.Adapter<RecyclerSc
             super(itemView);
             timeRangeTV = itemView.findViewById(R.id.lbl_timeRange);
             trainerTV = itemView.findViewById(R.id.lbl_trainer);
+
+            // Set click listener on the ViewHolder's item view
+            itemView.setOnClickListener(view -> {
+                if (onClickListener != null) {
+                    onClickListener.onClick(getAdapterPosition());
+                }
+            });
+        }
+
+
+
+        public void bind(final RecyclerScheduleData item, final AdapterView.OnItemClickListener listener) {
+
         }
     }
 }

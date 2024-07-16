@@ -75,7 +75,26 @@ namespace FitAppServer
                 new User { UserId = 3, UserName = "trainee1", UserRoleId = 3, FirstName = "C", LastName = "Nguyễn Văn", Email = "mailC@gmail.com", Password = "1" }
                 );
 
-            
+            // Create assignments
+            modelBuilder.Entity<Assign>().HasData(
+                new Assign { TraineeId = 3, TrainerId = 2, AssignedDate = new DateTime(2024, 7, 10, 12, 0, 0) }
+                );
+
+            // Create schedules
+            modelBuilder.Entity<Schedule>().HasData(
+                new Schedule { ScheduleId = 1, TraineeId = 3, TrainerId = 2, StartTime = new DateTime(2024, 7 ,16, 16, 20, 0), EndTime = new DateTime(2024, 7, 16, 18, 0, 0) },
+                new Schedule { ScheduleId = 2, TraineeId = 3, TrainerId = 2, StartTime = new DateTime(2024, 7, 17, 16, 20, 0), EndTime = new DateTime(2024, 7, 17, 18, 0, 0) },
+                new Schedule { ScheduleId = 3, TraineeId = 3, TrainerId = 2, StartTime = new DateTime(2024, 7, 19, 9, 30, 0), EndTime = new DateTime(2024, 7, 19, 11, 30, 0) }
+                );
+
+            // Create exercises
+            modelBuilder.Entity<Exercise>().HasData(
+                new Exercise { ExerciseId = 1, ExerciseName = "Burpees", ExerciseDescription = "Awesome burpees", Thumbnail = "1" },
+                new Exercise { ExerciseId = 2, ExerciseName = "Squat", ExerciseDescription = "Awesome burpees", Thumbnail = "1" },
+                new Exercise { ExerciseId = 3, ExerciseName = "Burpees", ExerciseDescription = "Awesome burpees", Thumbnail = "1" }
+                );
+
+
 
         }
     }

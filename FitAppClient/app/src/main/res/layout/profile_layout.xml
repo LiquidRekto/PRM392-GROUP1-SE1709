@@ -99,6 +99,7 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/sc_log_out"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/selectableItemBackground"

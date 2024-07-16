@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Schedule {
     private int scheduleId;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private String startTime;
+    private String endTime;
     private User trainee;
     private User trainer;
     private List<Exercise> exercises;
@@ -14,7 +14,7 @@ public class Schedule {
     public Schedule() {
     }
 
-    public Schedule(int scheduleId, LocalDateTime startTime, LocalDateTime endTime, User trainee, User trainer, List<Exercise> exercises) {
+    public Schedule(int scheduleId, String startTime, String endTime, User trainee, User trainer, List<Exercise> exercises) {
         this.scheduleId = scheduleId;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -31,19 +31,19 @@ public class Schedule {
         this.scheduleId = scheduleId;
     }
 
-    public LocalDateTime getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 

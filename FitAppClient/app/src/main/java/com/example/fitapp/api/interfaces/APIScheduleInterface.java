@@ -13,6 +13,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface APIScheduleInterface {
-    @GET("api/Schedule/{date}")
-    Call<List<Schedule>> getSchedulesOfDate(@Path("date") LocalDate date);
+    @GET("api/Schedule/byUser/{user}/date/{date}")
+    Call<List<Schedule>> getSchedulesOfDate(@Path("user") String userId, @Path("date") String date);
 }
