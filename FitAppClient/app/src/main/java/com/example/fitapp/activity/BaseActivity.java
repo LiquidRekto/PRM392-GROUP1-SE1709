@@ -18,6 +18,7 @@ import com.example.fitapp.R;
 import com.example.fitapp.databinding.BaseLayoutBinding;
 import com.example.fitapp.fragment.HomeFragment;
 import com.example.fitapp.fragment.SettingsFragment;
+import com.example.fitapp.fragment.TraineeScheduleFragment;
 import com.example.fitapp.fragment.UserProfileFragment;
 
 public class BaseActivity extends AppCompatActivity {
@@ -45,8 +46,8 @@ public class BaseActivity extends AppCompatActivity {
                 replaceFragment(new HomeFragment());
             } else if (itemId == R.id.profile) {
                 replaceFragment(new UserProfileFragment());
-            } else if (itemId == R.id.settings) {
-                replaceFragment(new SettingsFragment());
+            } else if (itemId == R.id.schedule) {
+                replaceFragment(new TraineeScheduleFragment());
             }
             return true;
         });
